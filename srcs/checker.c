@@ -40,9 +40,7 @@ int	main(int ac, char **av)
 		flags(&ac, av, &g);
 	if (ac >= 2)
 	{
-		if (ac == 2 && !read_one_arg(av[1 + g.verbose], &g))
-			ft_out("Error");
-		else if (ac >= 3 && !read_args(av, &g))
+		if (!reading(ac, av, &g))
 			ft_out("Error");
 		reformat(&g);
 		bubblesort((int *)memory, g.a_stack, g.a_stack_count);
@@ -50,13 +48,24 @@ int	main(int ac, char **av)
 		if (!read_valid_input(&g, memory))
 			ft_out("Error");
 		execute_instructions(&g);
+		bubblesort((int *)memory, g.a_stack, g.a_stack_count);
 		if (g.b_stack_count > 0)
 			write(1, "KO\n", 3);
 		if (ft_memcmp((int *)memory, g.a_stack, 4 * g.a_stack_count))
 			write(1, "KO\n", 3);
-		write(1, "OK\n", 3);
+		else
+			write(1, "OK\n", 3);
 	}
 	return (0);
+}
+
+int	reading(int ac, char **av, t_global *g)
+{
+	if (ac == 2 && !read_one_arg(av[1 + g->verbose], g))
+		return (0);
+	else if (ac >= 3 && !read_args(av, g))
+		return (0);
+	return (1);
 }
 
 void	flags(int *ac, char **av, t_global *g)

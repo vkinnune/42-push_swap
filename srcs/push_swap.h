@@ -62,6 +62,7 @@ void	execute_instructions(t_global *g);
 int		read_valid_input(t_global *g, char *memory_buffer);
 void	flags(int *ac, char **av, t_global *g);
 void	print_verbose(t_global *g, int exec_index);
+int		reading(int ac, char **av, t_global *g);
 
 /*
    Shared
