@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 		bubblesort((int *)memory, g.a_stack, g.a_stack_count);
 		if (g.b_stack_count > 0)
 			write(1, "KO\n", 3);
-		if (ft_memcmp((int *)memory, g.a_stack, 4 * g.a_stack_count))
+		else if (ft_memcmp((int *)memory, g.a_stack, 4 * g.a_stack_count))
 			write(1, "KO\n", 3);
 		else
 			write(1, "OK\n", 3);
