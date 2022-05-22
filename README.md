@@ -1,7 +1,7 @@
 # 42-push_swap
 The Push_swap project is a very simple and highly effective algorithm project: data will need to be sorted. You have at your disposal a set of int values, 2 stacks and a set of instructions and the stacks are first in, first out.
 
-In Push_swap, we couldn't just copy and paste an already made sorting algorithm from the internet because of the restrictions and rules we were given. We had to think from scratch, make a custom solution, and understand the problem.
+In Push_swap, we couldn't just copy and paste an already made sorting algorithm from the internet because of the nature of the problem. We had to think from scratch, make a custom solution, and understand the problem.
 
 We learned the concept of the stack that comes in handy in breadth-first search algorithms in the next project called Lem_in.
 
